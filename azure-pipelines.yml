@@ -8,8 +8,8 @@ pool:
 steps:
 - task: UsePythonVersion@0
   inputs:
-    versionSpec: '3.9.7'
-  displayName: 'Define version de python'
+    versionSpec: '$(python.version)'
+  displayName: 'Define version de python, se usara la $(python.version)'
 
 - script: |
     echo "LOG: Inicio instalacion dependencias"
