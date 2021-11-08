@@ -69,10 +69,10 @@ steps:
 
 
 #HAGO EL DEPLOY A LA WEBAPP YA CREADA A TRAVES DE LA SERVICE CONNECTION YA CREADA
-- task: AzureWebApp@1
+- task: AzureRmWebAppDeployment@4
   inputs:
-    azureSubscription: $(svc_name)
-    appName: $(wa_name)
+    ConnectedServiceName: $(svc_name)
+    WebAppName: $(wa_name)
     appType: 'webAppLinux'
     package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
     #SOLO EN CASO QUE QUIERA SETEAR OTRO COMANDO DE INICIO
