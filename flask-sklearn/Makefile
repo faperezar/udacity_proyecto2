@@ -2,8 +2,8 @@ hello:
 	echo "Inicio ejecucion Make File"
 
 setup:
-	#python3 -m venv ~/.udacity-devops
-		#source ~/.udacity-devops/bin/activate
+	#python3 -m venv ~/udacity_proyecto2/.virtual_env
+		#source ~/.virtual_env/bin/activate
 
 install:
 	pip install --upgrade pip &&\
