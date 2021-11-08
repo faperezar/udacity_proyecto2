@@ -1,16 +1,33 @@
 
 trigger:
-- main
+  branches:
+    include:
+    - main
 
+#POSIBLES TRIGGER
+#trigger:
+#  branches:
+#    include:
+#    - master
+#    - releases/*
+#    exclude:
+#    - releases/old*
+
+#PIPELINE SIN TRIGGER
+#trigger: none
+
+#INDICO QUE IMAGEN DE VM VA USAR
 pool:
   vmImage: ubuntu-latest
 
 steps:
+#INDICO QUE VERSION DE PYTHON USAREMOS COMO VARIABLE
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '$(python.version)'
   displayName: 'Define version de python, se usara la $(python.version)'
 
+#EJECUTO LA INSTALACION DE DEPENDENCIAS
 - script: |
     echo "LOG: Inicio instalacion dependencias"
     pip install --upgrade pip &&\
@@ -19,6 +36,7 @@ steps:
     echo "LOG:Fin instalacion dependencias"
   displayName: 'Instalación de dependencias'
 
+#EJECUTO REVISION DE CODITO CON PYLINT
 - script: |
     echo "LOG: Inicio revision de codigo"
     python -m pylint --disable=R,C,W1203,W0702 app.py
@@ -26,8 +44,36 @@ steps:
     echo "LOG: Fin revision de codigo"
   displayName: 'Revisión de codigo'
 
+#EJECUTO LOS TESTO UNITARIOS CONFIGURADOS CON PYTEST
 - script: |
     echo "LOG: Inicio Test Unitario"
     python -m pytest -vv test_hello.py
     echo "LOG: Fin Test Unitario"
   displayName: 'Test unitarios'
+
+
+#CONTRUYO EL ARCHIVO QUE QUIERO DEPLOYAR
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.SourcesDirectory)'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip'
+    replaceExistingArchive: true
+    verbose: # (no value); this input is optional
+- publish: $(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip
+  displayName: 'Contruccion archivo que deployaremos'
+  artifact: drop
+
+
+#HAGO EL DEPLOY A LA WEBAPP YA CREADA A TRAVES DE LA SERVICE CONNECTION YA CREADA
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: $(svc_name)
+    appName: $(wa_name)
+    appType: 'webAppLinux'
+    package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
+    #SOLO EN CASO QUE QUIERA SETEAR OTRO COMANDO DE INICIO
+    startUpCommand: ''
+
+  displayName: 'Despliegue en Azure Web App $(wa_name)'
