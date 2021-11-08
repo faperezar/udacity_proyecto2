@@ -2,7 +2,7 @@ hello:
 	echo "Inicio ejecucion Make File"
 
 setup:
-	python3 -m venv ~/.udacity-devops
+	#python3 -m venv ~/.udacity-devops
 		#source ~/.udacity-devops/bin/activate
 
 install:
