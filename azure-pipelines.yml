@@ -9,7 +9,7 @@ steps:
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '3.9.7'
-  displayName: 'LOG:Define version de python'
+  displayName: 'Define version de python'
 
 - script: |
     echo "LOG: Inicio instalacion dependencias"
@@ -17,17 +17,17 @@ steps:
     pip install -r requirements.txt
     
     echo "LOG:Fin instalacion dependencias"
-  displayName: 'LOG:Instalación de dependencias'
+  displayName: 'Instalación de dependencias'
 
 - script: |
     echo "LOG: Inicio revision de codigo"
     python -m pylint --disable=R,C,W1203,W0702 app.py
     python -m pylint --disable=R,C,W1203,W0702 hello.py
     echo "LOG: Fin revision de codigo"
-  displayName: 'LOG:Revisión de codigo'
+  displayName: 'Revisión de codigo'
 
 - script: |
     echo "LOG: Inicio Test Unitario"
     python -m pytest -vv test_hello.py
     echo "LOG: Fin Test Unitario"
-  displayName: 'LOG:Test unitarios'
+  displayName: 'Test unitarios'
