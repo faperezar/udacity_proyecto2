@@ -1,15 +1,23 @@
+hello:
+	echo "Inicio ejecucion Make File"
+
 setup:
 	python3 -m venv ~/.udacity-devops
+		#source ~/.udacity-devops/bin/activate
 
 install:
 	pip install --upgrade pip &&\
 		pip install -r requirements.txt
 
+lint:
+	python -m pylint --disable=R,C,W1203,W0702 app.py
+
 test:
+	echo "Sin pruebas unitarias configuradas"
 	#python -m pytest -vv --cov=myrepolib tests/*.py
 	#python -m pytest --nbval notebook.ipynb
 
-lint:
-	python -m pylint --disable=R,C,W1203 app.py
+final:
+	echo "Final ejecucion Make File"
 
-all: install lint test
+all: hello setup install lint test final
