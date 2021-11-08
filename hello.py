@@ -1,3 +1,5 @@
+print("hello.py run beggin")
+
 def toyou(x):
     return "hi %s" % x
 
