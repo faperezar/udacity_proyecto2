@@ -52,7 +52,7 @@ steps:
   displayName: 'Test unitarios'
 
 
-#CONTRUYO EL ARCHIVO QUE QUIERO DEPLOYAR
+#CONTRUYO Y PUBLICO EL ARCHIVO QUE QUIERO DEPLOYAR
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(Build.SourcesDirectory)'
@@ -61,8 +61,10 @@ steps:
     archiveFile: '$(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip'
     replaceExistingArchive: true
     verbose: # (no value); this input is optional
-- publish: $(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip
   displayName: 'Contruccion archivo que deployaremos'
+
+- publish: $(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip
+  displayName: 'Publicacion archivo que deployaremos'
   artifact: drop
 
 
