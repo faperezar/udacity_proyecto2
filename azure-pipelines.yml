@@ -18,16 +18,25 @@ trigger:
 #PIPELINE SIN TRIGGER
 #trigger: none
 
+#VARIABLES
+variables:
+  azureServiceConnectionId: 'SVC-SPN-WA-DESA-UDACITY'
+  webAppName: 'WA-DESA-UDACITY'
+  vmImageName: 'ubuntu-latest'
+  environmentName: 'prod'
+  projectRoot: $(System.DefaultWorkingDirectory)
+  python_version: '3.9'
+
 #INDICO QUE IMAGEN DE VM VA USAR
 pool:
-  vmImage: ubuntu-latest
+  vmImage: $(vmImageName)
 
 steps:
 #INDICO QUE VERSION DE PYTHON USAREMOS COMO VARIABLE
 - task: UsePythonVersion@0
   inputs:
-    versionSpec: '$(python.version)'
-  displayName: 'Define version de python, se usara la $(python.version)'
+    versionSpec: '$(python_version)'
+  displayName: 'Define version de python, se usara la $(python_version)'
 
 #EJECUTO LA INSTALACION DE DEPENDENCIAS
 - script: |
@@ -57,7 +66,7 @@ steps:
 #CONTRUYO Y PUBLICO EL ARCHIVO QUE QUIERO DEPLOYAR
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(Build.SourcesDirectory)'
+    rootFolderOrFile: '$(projectRoot)'
     includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip'
@@ -73,10 +82,10 @@ steps:
 #HAGO EL DEPLOY A LA WEBAPP YA CREADA A TRAVES DE LA SERVICE CONNECTION YA CREADA
 
 - task: AzureWebApp@1
-  displayName: 'Despliegue en Azure Web App $(wa_name)'
+  displayName: 'Despliegue en Azure Web App $(webAppName)'
   inputs:
-    azureSubscription: $(svc_name)
-    appName: $(wa_name)
+    azureSubscription: $(azureServiceConnectionId)
+    appName: $(webAppName)
     appType: 'webAppLinux'
     package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
 
