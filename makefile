@@ -3,7 +3,8 @@ hello:
 
 setup:
 	#python3 -m venv ~/udacity_proyecto2/.virtual_env
-		#source ~/.virtual_env/bin/activate
+		#source "C:\Users\faperezar\Desktop\Cursos\Udacity - Devops using Microsoft Azure\2 - CICD\udacity_proyecto2\~\udacity_proyecto2\.virtual_env\Scripts\activate"
+		#source ~/udacity_proyecto2/.virtual_env/bin/activate
 
 install:
 	pip install --upgrade pip &&\
@@ -19,4 +20,4 @@ test:
 final:
 	echo "Final ejecucion Make File"
 
-all: hello setup install lint test final
+all: hello install lint test final
