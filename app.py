@@ -3,9 +3,9 @@ from flask.logging import create_logger
 import logging
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
-
-#Este arrojaba error "from sklearn.preprocessing import StandardScaler"
 import joblib
+#Este arrojaba error "from sklearn.externals import joblib"
+
 
 #Todo esto es para el levantamiento de una web simple con Flask
 app = Flask(__name__)
@@ -77,4 +77,4 @@ def predict():
 
 #Ojo, esto lo deberia poder probar desde POSTMAN 
 #o ejecutando el make_prediction.sh para probar el publicado en el local
-#o el make_prediction_azure_app.sh para probar el publicado en la webapp
+#o el make_predict_azure_app.sh para probar el publicado en la webapp

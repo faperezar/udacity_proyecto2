@@ -10,7 +10,7 @@ install:
 		pip install -r requirements.txt
 
 lint:
-	python -m pylint --disable=R,C,W1203,W0702 app.py
+	python -m pylint --disable=R,C,W1203,W0702,W0511 app.py
 		python -m pylint --disable=R,C,W1203,W0702 hello.py
 
 test:
