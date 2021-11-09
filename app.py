@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    html = "<h3>Udacity - Sklearn Prediction Home</h3>"
+    html = "<h3>Udacity - Sklearn Prediction Home - Pipeline</h3>"
     return html.format(format)
 
 if __name__ == "__main__":
