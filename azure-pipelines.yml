@@ -1,3 +1,5 @@
+#NOMBRE DEL PIPELINE
+name: CICD-WebApp-Udacity-$(SourceBranchName)_$(date:yyyyMMdd)$(rev:.r)
 
 trigger:
   branches:
