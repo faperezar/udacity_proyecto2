@@ -30,7 +30,7 @@ variables:
 
 stages:
 - stage: Build
-  displayName: Build stage
+  displayName: 'INTEGRACION CONTINUA'
   jobs:
   - job: BuildJob
     pool:
@@ -39,18 +39,49 @@ stages:
     - task: UsePythonVersion@0
       inputs:
         versionSpec: '$(pythonVersion)'
-      displayName: 'Use Python $(pythonVersion)'
+      displayName: 'Define version de python, se usara la $(python_version)'
     
+
+#LEVANTO EL ENTORNO VIRTUAL DE PYTHON
     - script: |
+        echo "LOG: Inicio levantamiento entorno virtual"
         python -m venv antenv
         source antenv/bin/activate
-        python -m pip install --upgrade pip
-        pip install setup
-        pip install -r requirements.txt
+        
+        echo "LOG:Fin Inicio levantamiento entorno virtual"
+      displayName: 'Entorno virtual'
       workingDirectory: $(projectRoot)
-      displayName: "Install requirements"
+
+#EJECUTO LA INSTALACION DE DEPENDENCIAS
+    - script: |
+        echo "LOG: Inicio instalacion dependencias"
+        pip install --upgrade pip &&\
+        pip install -r requirements.txt
+        
+        echo "LOG:Fin instalacion dependencias"
+      displayName: 'Instalación de dependencias'
+      workingDirectory: $(projectRoot)
+
+#EJECUTO REVISION DE CODITO CON PYLINT
+    - script: |
+        echo "LOG: Inicio revision de codigo"
+        python -m pylint --disable=R,C,W1203,W0702 app.py
+        python -m pylint --disable=R,C,W1203,W0702 hello.py
+        echo "LOG: Fin revision de codigo"
+      displayName: 'Revisión de codigo'
+      workingDirectory: $(projectRoot)
+
+#EJECUTO LOS TESTO UNITARIOS CONFIGURADOS CON PYTEST
+    - script: |
+        echo "LOG: Inicio Test Unitario"
+        python -m pytest -vv test_hello.py
+        echo "LOG: Fin Test Unitario"
+      displayName: 'Test unitarios'
+      workingDirectory: $(projectRoot)
+      
+#CONTRUYO Y PUBLICO EL ARCHIVO QUE QUIERO DEPLOYAR
     - task: ArchiveFiles@2
-      displayName: 'Archive files'
+      displayName: 'Contruccion archivo que deployaremos'
       inputs:
         rootFolderOrFile: '$(projectRoot)'
         includeRootFolder: false
@@ -59,11 +90,13 @@ stages:
         replaceExistingArchive: true
 
     - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-      displayName: 'Upload package'
+      displayName: 'Pubicacion archivo que deployaremos'
       artifact: drop
 
+
+#HAGO EL DEPLOY A LA WEBAPP YA CREADA A TRAVES DE LA SERVICE CONNECTION YA CREADA
 - stage: Deploy
-  displayName: 'Deploy Web App'
+  displayName: 'DESPLIEGUE CONTINUO'
   dependsOn: Build
   condition: succeeded()
   jobs:
@@ -79,7 +112,7 @@ stages:
           - task: UsePythonVersion@0
             inputs:
               versionSpec: '$(pythonVersion)'
-            displayName: 'Use Python version'
+            displayName: 'Define version de python, se usara la $(python_version)'
 
           - task: AzureWebApp@1
             displayName: 'Deploy Azure Web App : '
