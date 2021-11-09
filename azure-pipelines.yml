@@ -55,9 +55,9 @@ stages:
 #EJECUTO LA INSTALACION DE DEPENDENCIAS
     - script: |
         echo "LOG: Inicio instalacion dependencias"
-        pip install --upgrade pip &&\
+        python -m pip install --upgrade pip
+        pip install setup
         pip install -r requirements.txt
-        
         echo "LOG:Fin instalacion dependencias"
       displayName: 'Instalación de dependencias'
       workingDirectory: $(projectRoot)
