@@ -23,6 +23,7 @@ variables:
   azureServiceConnectionId: 'SVC-SPN-WA-DESA-UDACITY'
   webAppName: 'WA-DESA-UDACITY'
   vmImageName: 'ubuntu-latest'
+  #Los Enviroment sirve solo para categorizar y agrupar ejecuciones (runs) de algunos jobs, idealmente los de despliegue
   environmentName: 'prod'
   projectRoot: $(System.DefaultWorkingDirectory)
   pythonVersion: '3.9'
