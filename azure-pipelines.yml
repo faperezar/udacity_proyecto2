@@ -71,13 +71,25 @@ steps:
 
 
 #HAGO EL DEPLOY A LA WEBAPP YA CREADA A TRAVES DE LA SERVICE CONNECTION YA CREADA
-- task: AzureRmWebAppDeployment@4
+
+
+- task: UsePythonVersion@0
   inputs:
-    ConnectedServiceName: $(svc_name)
-    WebAppName: $(wa_name)
+    versionSpec: '$(python.version)'
+  displayName: 'Define version de python, se usara la $(python.version)'
+
+- task: AzureWebApp@1
+  displayName: 'Despliegue en Azure Web App $(wa_name)'
+  inputs:
+    azureSubscription: $(svc_name)
+    appName: $(wa_name)
     appType: 'webAppLinux'
     package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-    #SOLO EN CASO QUE QUIERA SETEAR OTRO COMANDO DE INICIO
+
+    # The following parameter is specific to the Flask example code. You may
+    # or may not need a startup command for your app.
+
     startUpCommand: ''
 
-  displayName: 'Despliegue en Azure Web App $(wa_name)'
+
+
