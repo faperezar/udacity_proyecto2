@@ -27,7 +27,8 @@ variables:
   projectRoot: $(System.DefaultWorkingDirectory)
   pythonVersion: '3.9'
 
-
+##STAGE INTEGRACION CONTINUA
+#ACA COMIENZA LA STAGE DE INTEGRACION CONTINUA DESDE LA INSTALACIÓN DE DEPENDENCIA COMO CONSTRUCCION DEL PARQUETE 
 stages:
 - stage: Build
   displayName: 'INTEGRACION CONTINUA'
@@ -93,10 +94,11 @@ stages:
       displayName: 'Pubicacion archivo que deployaremos'
       artifact: drop
 
-
+##STAGE DESPLIEGUE CONTINUO
 #HAGO EL DEPLOY A LA WEBAPP YA CREADA A TRAVES DE LA SERVICE CONNECTION YA CREADA
 - stage: Deploy
   displayName: 'DESPLIEGUE CONTINUO'
+  #Notar que acá le digo que esta Stage de Deploy depende de que la Stage de Build haya sido exitosa para ejecutarse
   dependsOn: Build
   condition: succeeded()
   jobs:
