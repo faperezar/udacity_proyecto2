@@ -1,4 +1,4 @@
-#NOMBRE DEL PIPELINE
+#NOMBRE DEL DEL RUN
 name: CICD-WebApp-Udacity-$(SourceBranchName)_$(date:yyyyMMdd)$(rev:.r)
 
 trigger:
@@ -71,12 +71,6 @@ steps:
 
 
 #HAGO EL DEPLOY A LA WEBAPP YA CREADA A TRAVES DE LA SERVICE CONNECTION YA CREADA
-
-
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '$(python.version)'
-  displayName: 'Define version de python, se usara la $(python.version)'
 
 - task: AzureWebApp@1
   displayName: 'Despliegue en Azure Web App $(wa_name)'
