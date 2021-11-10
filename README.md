@@ -23,8 +23,9 @@ https://github.com/faperezar/udacity_proyecto2/blob/8e9e444d2c4937c27c2523caf056
 2) Make the SSH connection from your Azure to Github
     
     ```ssh-keygen -t rsa
-    cat /c/Users/faperezar/.ssh/id_rsa.pub```
-    
+    cat /c/Users/faperezar/.ssh/id_rsa.pub
+    ```
+
     ![SSH](https://github.com/faperezar/udacity_proyecto2/blob/84ada533f86ca249d250cf61cddd322cf6efc017/files/Ins%202.png)
 
 3) Gitclone the repository
@@ -33,8 +34,9 @@ https://github.com/faperezar/udacity_proyecto2/blob/8e9e444d2c4937c27c2523caf056
 
 4) Create a virtual enviroment python and then do all our operations inside it and then activate it, you will see a previous parenthesis that indicates that we are already inside the environment
 
-    ```python3 -m venv ~/udacity_proyecto2/.virtual_env <br>
-    source ~/udacity_proyecto2/.virtual_env/bin/activate```
+    ```python3 -m venv ~/udacity_proyecto2/.virtual_env
+    source ~/udacity_proyecto2/.virtual_env/bin/activate
+    ```
 
     ![Env_cirtual](https://github.com/faperezar/udacity_proyecto2/blob/84ada533f86ca249d250cf61cddd322cf6efc017/files/Ins%204.png)
 
@@ -48,8 +50,8 @@ https://github.com/faperezar/udacity_proyecto2/blob/8e9e444d2c4937c27c2523caf056
 
 7) To finally execute our app we do it through flask that by default will look for our app.py and will raise it in a transitory environment.
     
-    ```python -m flask run```
-
+    ```python -m flask run
+    ```
     
     ![Flask_run](https://github.com/faperezar/udacity_proyecto2/blob/84ada533f86ca249d250cf61cddd322cf6efc017/files/Ins%207.png)
 
@@ -59,7 +61,8 @@ https://github.com/faperezar/udacity_proyecto2/blob/8e9e444d2c4937c27c2523caf056
     
     ```git add [files] 
     git commit -m "commit_description" 
-    git push``` 
+    git push
+    ```
 
 2) The pipeline has two major stages, a CI which builds the virtual environment, installs the dependencies, builds and publishes the package of our app, and a second stage of deployment to our webapp. Important that this is done through our previously created service connection that connects Azure Devops with the Azure Web App.
 
@@ -71,7 +74,8 @@ https://github.com/faperezar/udacity_proyecto2/blob/8e9e444d2c4937c27c2523caf056
 
 4) We can see the log of our webapp to see who has used it and when.
 
-    ```az webapp log tail --resource-group RG-DESA-UDACITY --name wa-desa-udacity```
+    ```az webapp log tail --resource-group RG-DESA-UDACITY --name wa-desa-udacity
+    ```
 
     ![WA_log_tail](https://github.com/faperezar/udacity_proyecto2/blob/84ada533f86ca249d250cf61cddd322cf6efc017/files/Ins%2010.png)
 
