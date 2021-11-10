@@ -1,27 +1,47 @@
 # Overview
 
-<TODO: complete this with an overview of your project>
+This project is created in the context of the Udacity project and allows to have a practical execution of how an Integration flow and continuous deployment is carried out through GitHub and Azure Pipeline with a Python application and deployed to an Azure Web App.
 
 ## Project Plan
-<TODO: Project Plan
-
 * A link to a Trello board for the project
-* A link to a spreadsheet that includes the original and final project plan>
+https://trello.com/b/z3mKni0b/udacitycicd
+
+* A link to a spreadsheet that includes the original and final project plan
+
+
+## Architectural
+* Architectural Diagram (Shows how key parts of the system work)
 
 ## Instructions
+* Instructions Azure Cloud Shell:
 
-<TODO:  
-* Architectural Diagram (Shows how key parts of the system work)>
+    1) Login to Azure and open azure cloud shell
 
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
+    2) Make the SSH connection from your Azure to Github
 
-* Project running on Azure App Service
+    ssh-keygen -t rsa
+    cat /c/Users/faperezar/.ssh/id_rsa.pub  
 
-* Project cloned into Azure Cloud Shell
+    3) Gitclone the repository
 
-* Passing tests that are displayed after running the `make all` command from the `Makefile`
+    4) Create a virtual enviroment python and then do all our operations inside it and then activate it, you will see a previous parenthesis that indicates that we are already inside the environment
 
-* Output of a test run
+    python3 -m venv ~/udacity_proyecto2/.virtual_env
+    source ~/udacity_proyecto2/.virtual_env/bin/activate
+
+    5) Let's download all the dependencies to our virtual environment using our built makefile.Remember to position yourself in the root directory of our code
+
+    6) Since our makefile also has pylint and pytest, both revisions will be executed as well.
+
+    7) To finally execute our app we do it through flask that by default will look for our app.py and will raise it in a transitory environment.
+
+    python -m flask run
+
+* Instructions CICD Azure pipeline:
+
+    1) As we have created our Azure Pipeline in the project to trigger the CD, it is enough to make a modification in the code and push it to github.
+
+    
 
 * Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
 
