@@ -2,13 +2,10 @@ from flask import Flask, request, jsonify
 from flask.logging import create_logger
 import logging
 import pandas as pd
-import sklearn.externals
+from sklearn.preprocessing import StandardScaler
 import joblib
 
-#from sklearn.preprocessing import StandardScaler
-#import joblib
 #Este arrojaba error "from sklearn.externals import joblib"
-
 
 #Todo esto es para el levantamiento de una web simple con Flask
 app = Flask(__name__)
