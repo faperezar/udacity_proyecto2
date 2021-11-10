@@ -7,10 +7,11 @@ This project is created in the context of the Udacity project and allows to have
 https://trello.com/b/z3mKni0b/udacitycicd
 
 * A link to a spreadsheet that includes the original and final project plan
-
+https://github.com/faperezar/udacity_proyecto2/blob/8e9e444d2c4937c27c2523caf05600cfeed79ace/files/Project%20Plan.xlsx
 
 ## Architectural
 * Architectural Diagram (Shows how key parts of the system work)
+![Architectural](https://github.com/faperezar/udacity_proyecto2/blob/8e9e444d2c4937c27c2523caf05600cfeed79ace/files/Diagram.png)
 
 ## Instructions
 * Instructions Azure Cloud Shell:
@@ -37,18 +38,23 @@ https://trello.com/b/z3mKni0b/udacitycicd
 
     python -m flask run
 
-* Instructions CICD Azure pipeline:
+* Instructions CICD Azure pipeline and webapp deployment:
 
     1) As we have created our Azure Pipeline in the project to trigger the CD, it is enough to make a modification in the code and push it to github.
 
-    
+    git add [files]
+    git commit -m "commit_description"
+    git push
 
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
+    2) The pipeline has two major stages, a CI which builds the virtual environment, installs the dependencies, builds and publishes the package of our app, and a second stage of deployment to our webapp. Important that this is done through our previously created service connection that connects Azure Devops with the Azure Web App.
 
-* Running Azure App Service from Azure Pipelines automatic deployment
+    3) We can see our app through the URL that the pipeline enters us. Important that in case our app.py is not in the root directory or has another name, we must modify the starting file of the webapp.
 
-* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
-The output should look similar to this:
+    4) We can see the log of our webapp to see who has used it and when.
+
+    az webapp log tail --resource-group RG-DESA-UDACITY --name wa-desa-udacity
+
+* Instructions to test the application as such.:
 
 ```bash
 udacity@Azure:~$ ./make_predict_azure_app.sh
@@ -56,13 +62,11 @@ Port: 443
 {"prediction":[20.35373177134412]}
 ```
 
-* Output of streamed log files from deployed application
-
-> 
-
 ## Enhancements
 
-<TODO: A short description of how to improve the project in the future>
+-Strengthen the unit test stage
+-Incorporate automated integration and / or performance tests to the CI
+-Deploy the infrastructure with terraform
 
 ## Demo 
 
