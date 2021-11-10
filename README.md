@@ -22,10 +22,11 @@ https://github.com/faperezar/udacity_proyecto2/blob/8e9e444d2c4937c27c2523caf056
 
 2) Make the SSH connection from your Azure to Github
     
-    ```ssh-keygen -t rsa
+    ```
+    ssh-keygen -t rsa
     cat /c/Users/faperezar/.ssh/id_rsa.pub
     ```
-
+    
     ![SSH](https://github.com/faperezar/udacity_proyecto2/blob/84ada533f86ca249d250cf61cddd322cf6efc017/files/Ins%202.png)
 
 3) Gitclone the repository
@@ -50,9 +51,10 @@ https://github.com/faperezar/udacity_proyecto2/blob/8e9e444d2c4937c27c2523caf056
 
 7) To finally execute our app we do it through flask that by default will look for our app.py and will raise it in a transitory environment.
     
-    ```python -m flask run
     ```
-    
+    python -m flask run
+    ```
+        
     ![Flask_run](https://github.com/faperezar/udacity_proyecto2/blob/84ada533f86ca249d250cf61cddd322cf6efc017/files/Ins%207.png)
 
 * Instructions CICD Azure pipeline and webapp deployment:
@@ -74,7 +76,8 @@ https://github.com/faperezar/udacity_proyecto2/blob/8e9e444d2c4937c27c2523caf056
 
 4) We can see the log of our webapp to see who has used it and when.
 
-    ```az webapp log tail --resource-group RG-DESA-UDACITY --name wa-desa-udacity
+    ```
+    az webapp log tail --resource-group RG-DESA-UDACITY --name wa-desa-udacity
     ```
 
     ![WA_log_tail](https://github.com/faperezar/udacity_proyecto2/blob/84ada533f86ca249d250cf61cddd322cf6efc017/files/Ins%2010.png)
