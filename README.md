@@ -11,7 +11,7 @@ https://github.com/faperezar/udacity_proyecto2/blob/8e9e444d2c4937c27c2523caf056
 
 ## Architectural
 * Architectural Diagram (Shows how key parts of the system work)
-![Architectural](https://github.com/faperezar/udacity_proyecto2/blob/8e9e444d2c4937c27c2523caf05600cfeed79ace/files/Diagram.png)
+![Architectural](https://github.com/faperezar/udacity_proyecto2/blob/ab8e3e748ed749d448e78edf638b864d5556bf21/files/Diagram.png)
 
 ## Instructions
 * Instructions Azure Cloud Shell:
@@ -61,7 +61,8 @@ https://github.com/faperezar/udacity_proyecto2/blob/8e9e444d2c4937c27c2523caf056
 
 1) As we have created our Azure Pipeline in the project to trigger the CD, it is enough to make a modification in the code and push it to github.
     
-    ```git add [files] 
+    ```
+    git add [files] 
     git commit -m "commit_description" 
     git push
     ```
