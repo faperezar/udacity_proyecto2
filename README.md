@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/faperezar/udacity_proyecto2/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg)](https://github.com/faperezar/udacity_proyecto2/Python%20application%20test%20with%20Github%20Actions)
+
 # Overview
 
 This project is created in the context of the Udacity project and allows to have a practical execution of how an Integration flow and continuous deployment is carried out through GitHub and Azure Pipeline with a Python application and deployed to an Azure Web App.
