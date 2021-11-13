@@ -35,7 +35,8 @@ https://github.com/faperezar/udacity_proyecto2/blob/8e9e444d2c4937c27c2523caf056
 
 4) Create a virtual enviroment python and then do all our operations inside it and then activate it, you will see a previous parenthesis that indicates that we are already inside the environment
 
-    ```python3 -m venv ~/udacity_proyecto2/.virtual_env
+    ```
+    python3 -m venv ~/udacity_proyecto2/.virtual_env
     source ~/udacity_proyecto2/.virtual_env/bin/activate
     ```
 
