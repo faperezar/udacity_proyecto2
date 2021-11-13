@@ -1,6 +1,6 @@
-[![Actions Status](https://github.com/faperezar/udacity_proyecto2/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg)](https://github.com/faperezar/udacity_proyecto2/Python%20application%20test%20with%20Github%20Actions)
+[![Badged Github Action](https://github.com/faperezar/udacity_proyecto2/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg)](https://github.com/faperezar/udacity_proyecto2/Python%20application%20test%20with%20Github%20Actions)
 
-[![Build Status](https://achsdev.visualstudio.com/NACOD%20-%20Udacity/_apis/build/status/faperezar.udacity_proyecto2?branchName=main)](https://achsdev.visualstudio.com/NACOD%20-%20Udacity/_build/latest?definitionId=584&branchName=main)
+![Badged Azure Pipeline](https://achsdev.visualstudio.com/NACOD%20-%20Udacity/_apis/build/status/faperezar.udacity_proyecto2?branchName=main)
 
 # Overview
 
@@ -104,11 +104,12 @@ Port: 443
 
 * Annexed
 
-6) We can include badges of how the last execution of the Pipeline or Github Action associated with our repository resulted in the Readme.
+1) We can include badges of how the last execution of the Pipeline or Github Action associated with our repository resulted in the Readme.
+
+     ![Badged](https://github.com/faperezar/udacity_proyecto2/blob/12c54067372b9e254664feb8f186b97dcdcfc50f/files/Badged.png)
 
 
-
-7) Remember that we also configure a GitHub Action that is triggered with any modification in our branch.
+2) Remember that we also configure a GitHub Action that is triggered with any modification in our branch.
 
     ![GitHub Action](https://github.com/faperezar/udacity_proyecto2/blob/503ff45de2c5e0ef885fe1eeb4890c421ba519db/files/GitHubAction.png)
 
