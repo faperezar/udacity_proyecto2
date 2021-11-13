@@ -104,7 +104,14 @@ Port: 443
 
 * Annexed
 
-6) We can include badges of how the last execution of the Pipeline or Github Action associated with our repository resulted in the Readme. We do this in the following way.
+6) We can include badges of how the last execution of the Pipeline or Github Action associated with our repository resulted in the Readme.
+
+
+
+7) Remember that we also configure a GitHub Action that is triggered with any modification in our branch.
+
+    ![GitHub Action](https://github.com/faperezar/udacity_proyecto2/blob/503ff45de2c5e0ef885fe1eeb4890c421ba519db/files/GitHubAction.png)
+
 
 ## Enhancements
 
