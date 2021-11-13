@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\faperezar\Desktop\Cursos\Udacity - Devops using Microsoft Azure\2 - CICD\udacity_proyecto2\~\udacity_proyecto2\.virtual_env"
+VIRTUAL_ENV="C:\Users\faperezar\Desktop\Cursos\Udacity - Devops using Microsoft Azure\2 - CICD\udacity_proyecto2\~\.virtual_env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

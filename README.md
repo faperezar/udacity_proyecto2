@@ -41,6 +41,12 @@ https://github.com/faperezar/udacity_proyecto2/blob/8e9e444d2c4937c27c2523caf056
 
     ![Env_cirtual](https://github.com/faperezar/udacity_proyecto2/blob/84ada533f86ca249d250cf61cddd322cf6efc017/files/Ins%204.png)
 
+    Note that when doing it from local, the "active" file changes its place, so when activating it we should use something like this:
+
+    Example creation CMD: python3 -m venv ~/.virtual_env
+
+    Example active BASH: source "C:\Users\faperezar\Desktop\Cursos\Udacity - Devops using Microsoft Azure\2 - CICD\udacity_proyecto2\~\udacity_proyecto2\.virtual_env\Scripts\activate"
+
 5) Let's download all the dependencies to our virtual environment using our built makefile.Remember to position yourself in the root directory of our code
 
     ![Dependecy](https://github.com/faperezar/udacity_proyecto2/blob/84ada533f86ca249d250cf61cddd322cf6efc017/files/Ins%205.png)
