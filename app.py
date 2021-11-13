@@ -6,6 +6,7 @@ from sklearn.preprocessing import StandardScaler
 import joblib
 
 #Este arrojaba error "from sklearn.externals import joblib"
+#import sys
 
 #Todo esto es para el levantamiento de una web simple con Flask
 app = Flask(__name__)
