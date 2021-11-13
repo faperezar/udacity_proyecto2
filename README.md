@@ -89,7 +89,7 @@ https://github.com/faperezar/udacity_proyecto2/blob/8e9e444d2c4937c27c2523caf056
 
     ![WA_log_tail](https://github.com/faperezar/udacity_proyecto2/blob/84ada533f86ca249d250cf61cddd322cf6efc017/files/Ins%2010.png)
 
-* Instructions to test the application as such.:
+5) To directly test the model of the raised application, we can occupy the following file, which finally makes a POST to the raised service in the web app. However, we can also test it with any assistant such as POSTMAN.
 
 ```bash
 udacity@Azure:~$ ./make_predict_azure_app.sh
