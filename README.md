@@ -1,5 +1,7 @@
 [![Actions Status](https://github.com/faperezar/udacity_proyecto2/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg)](https://github.com/faperezar/udacity_proyecto2/Python%20application%20test%20with%20Github%20Actions)
 
+[![Build Status](https://achsdev.visualstudio.com/NACOD%20-%20Udacity/_apis/build/status/faperezar.udacity_proyecto2?branchName=main)](https://achsdev.visualstudio.com/NACOD%20-%20Udacity/_build/latest?definitionId=584&branchName=main)
+
 # Overview
 
 This project is created in the context of the Udacity project and allows to have a practical execution of how an Integration flow and continuous deployment is carried out through GitHub and Azure Pipeline with a Python application and deployed to an Azure Web App.
@@ -99,6 +101,10 @@ udacity@Azure:~$ ./make_predict_azure_app.sh
 Port: 443
 {"prediction":[20.35373177134412]}
 ```
+
+* Annexed
+
+6) We can include badges of how the last execution of the Pipeline or Github Action associated with our repository resulted in the Readme. We do this in the following way.
 
 ## Enhancements
 
