@@ -19,4 +19,6 @@ bash make_predict_azure_app.sh
 
 az webapp log tail --resource-group RG-DESA-UDACITY --name wa-desa-udacity
 
+locust -f locustfile.py QuickstartUser --host https://wa-desa-udacity.azurewebsites.net:443
+
 echo "Finish command for project execution"

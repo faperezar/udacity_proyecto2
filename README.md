@@ -100,6 +100,10 @@ Port: 443
 {"prediction":[20.35373177134412]}
 ```
 
+6) We can also run a simple performance test with the locust python library. In this case we run 10 concurrent users on the application and on the predict method.
+
+    ![Locust](https://github.com/faperezar/udacity_proyecto2/blob/d9629d05aff2661d959427adf86f725f1ff88b88/files/Locust.png)
+
 * Annexed
 
 1) We can include badges of how the last execution of the Pipeline or Github Action associated with our repository resulted in the Readme.
