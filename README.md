@@ -9,7 +9,7 @@ This project is created in the context of the Udacity project and allows to have
 https://trello.com/b/z3mKni0b/udacitycicd
 
 * A link to a spreadsheet that includes the original and final project plan
-https://github.com/faperezar/udacity_proyecto2/blob/8e9e444d2c4937c27c2523caf05600cfeed79ace/files/Project%20Plan.xlsx
+https://github.com/faperezar/udacity_proyecto2/blob/d5d6f9602583e73dad3160ecc2b33d60ef2e6d73/files/Project%20Plan%20v2.xlsx
 
 ## Architectural
 * Architectural Diagram (Shows how key parts of the system work)
