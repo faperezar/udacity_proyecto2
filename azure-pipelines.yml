@@ -26,7 +26,7 @@ variables:
   #Los Enviroment sirve solo para categorizar y agrupar ejecuciones (runs) de algunos jobs, idealmente los de despliegue
   environmentName: 'prod'
   projectRoot: $(System.DefaultWorkingDirectory)
-  pythonVersion: '3.6'
+  pythonVersion: '3.6.0'
 
 ##STAGE INTEGRACION CONTINUA
 #ACA COMIENZA LA STAGE DE INTEGRACION CONTINUA DESDE LA INSTALACIÓN DE DEPENDENCIA COMO CONSTRUCCION DEL PARQUETE 
