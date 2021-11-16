@@ -119,7 +119,7 @@ Port: 443
 
     ![WA Deployment](https://github.com/faperezar/udacity_proyecto2/blob/cb108d5c364cb60fbe57eb437ae613168638ac47/files/AZ%20WA%20Deployment%20Center.png)
 
-4) We can make a .sh file to make it easier for the user to execute bash commands. It is a similar to make
+4) We can make a .sh file to make it easier for the user to execute bash commands. It is a similar to make.
 
     ![CommandSH](https://github.com/faperezar/udacity_proyecto2/blob/2adb90d405e7e54584df846ceb4233bf27e4824e/files/CommandSH.png)
 
