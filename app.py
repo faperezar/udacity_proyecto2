@@ -3,7 +3,8 @@ from flask.logging import create_logger
 import logging
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
-import joblib
+#import joblib
+from sklearn.externals import joblib
 
 #Este arrojaba error "from sklearn.externals import joblib"
 #import sys
