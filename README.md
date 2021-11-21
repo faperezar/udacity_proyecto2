@@ -114,9 +114,9 @@ Port: 443
     bash locust -f locustfile.py QuickstartUser --host https://wa-desa-udacity.azurewebsites.net:443
     ```
 
-We run on = http://localhost:8089/
+    ![Locust](https://github.com/faperezar/udacity_proyecto2/blob/07e742804e96d6ff0f57ddf0dda1a39e95ee538a/files/Locust.png)
 
-    ![Locust](https://github.com/faperezar/udacity_proyecto2/blob/d9629d05aff2661d959427adf86f725f1ff88b88/files/Locust.png)
+    We run on = http://localhost:8089/
 
 * Annexed
 
