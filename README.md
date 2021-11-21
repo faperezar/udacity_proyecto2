@@ -144,7 +144,7 @@ Port: 443
 * Incorporate automated integration and / or performance tests to the CI
 * Deploy the infrastructure with terraform
 
-## Demo 
+## Demo Video
 
 Video Demo Youtube: <br>
 [![Demo](https://img.youtube.com/vi/pdLPVPG0JRA/0.jpg)](https://www.youtube.com/watch?v=pdLPVPG0JRA)
