@@ -65,7 +65,7 @@ https://github.com/faperezar/udacity_proyecto2/blob/d5d6f9602583e73dad3160ecc2b3
     ```
         
     ![Flask_run](https://github.com/faperezar/udacity_proyecto2/blob/84ada533f86ca249d250cf61cddd322cf6efc017/files/Ins%207.png)
-    
+
 
     ```
     bash make_prediction.sh
@@ -110,8 +110,8 @@ Port: 443
 
 6) We can also run a simple performance test with the locust python library. In this case we run 10 concurrent users on the application and on the predict method.
 
-```bash
-locust -f locustfile.py QuickstartUser --host https://wa-desa-udacity.azurewebsites.net:
+```
+bash locust -f locustfile.py QuickstartUser --host https://wa-desa-udacity.azurewebsites.net:
 ```
 
 We run on = http://localhost:8089/
