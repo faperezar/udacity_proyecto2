@@ -8,8 +8,7 @@ setup:
 
 install:
 	pip install --upgrade pip &&\
-		pip install -r requirements_desktop.txt
-		#pip install -r requirements_az.txt
+		pip install -r requirements_az.txt
 
 lint:
 	python -m pylint --disable=R,C,W1203,W0702,W0511 app.py

@@ -65,6 +65,14 @@ https://github.com/faperezar/udacity_proyecto2/blob/d5d6f9602583e73dad3160ecc2b3
     ```
         
     ![Flask_run](https://github.com/faperezar/udacity_proyecto2/blob/84ada533f86ca249d250cf61cddd322cf6efc017/files/Ins%207.png)
+    
+
+    ```
+    bash make_prediction.sh
+    ```
+
+    ![Predict](https://github.com/faperezar/udacity_proyecto2/blob/6100db5b7e06bf644f8d7f23990b9d818ca46b04/files/Predict.png)
+
 
 * Instructions CICD Azure pipeline and webapp deployment:
 
@@ -95,7 +103,7 @@ https://github.com/faperezar/udacity_proyecto2/blob/d5d6f9602583e73dad3160ecc2b3
 5) To directly test the model of the raised application, we can occupy the following file, which finally makes a POST to the raised service in the web app. However, we can also test it with any assistant such as POSTMAN.
 
 ```bash
-udacity@Azure:~$ ./make_predict_azure_app.sh
+./make_predict_azure_app.sh
 Port: 443
 {"prediction":[20.35373177134412]}
 ```

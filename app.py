@@ -3,27 +3,14 @@ from flask.logging import create_logger
 import logging
 
 import pandas as pd
-import joblib
-#from sklearn.externals import joblib
+from sklearn.externals import joblib
 from sklearn.preprocessing import StandardScaler
 
-#import joblib
-#Este arrojaba error "from sklearn.externals import joblib"
-#import sys
+#Este arrojaba error en local"from sklearn.externals import joblib"
+#asi que lo reemplazo por import joblib
 
 #Todo esto es para el levantamiento de una web simple con Flask
 app = Flask(__name__)
-
-@app.route("/")
-def home():
-    html = "<h3>Udacity - Sklearn Prediction Home - Pipeline v2</h3>"
-    return html.format(format)
-
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, debug=True)
-
-#De aca en adelante es el servicio de prediccion
-
 LOG = create_logger(app)
 LOG.setLevel(logging.INFO)
 
@@ -35,10 +22,16 @@ def scale(payload):
     scaled_adhoc_predict = scaler.transform(payload)
     return scaled_adhoc_predict
 
+@app.route("/")
+def home():
+    html = "<h3>Udacity - Sklearn Prediction Home - Pipeline v3</h3>"
+    return html.format(format)
+
+#De aca en adelante es el servicio de prediccion
+
 @app.route("/predict", methods=['POST'])
 def predict():
     """Performs an sklearn prediction
-
     input looks like:
             {
     "CHAS":{
@@ -59,10 +52,8 @@ def predict():
     "LSTAT":{
        "0":4.98
     }
-
     result looks like:
     { "prediction": [ 20.35373177134412 ] }
-
     """
 
     try:
@@ -78,6 +69,9 @@ def predict():
     scaled_payload = scale(inference_payload)
     prediction = list(clf.predict(scaled_payload))
     return jsonify({'prediction': prediction})
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000, debug=True)
 
 #Ojo, esto lo deberia poder probar desde POSTMAN 
 #o ejecutando el make_prediction.sh para probar el publicado en el local
