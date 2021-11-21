@@ -110,9 +110,9 @@ Port: 443
 
 6) We can also run a simple performance test with the locust python library. In this case we run 10 concurrent users on the application and on the predict method.
 
-```
-bash locust -f locustfile.py QuickstartUser --host https://wa-desa-udacity.azurewebsites.net:
-```
+    ```
+    bash locust -f locustfile.py QuickstartUser --host https://wa-desa-udacity.azurewebsites.net:443
+    ```
 
 We run on = http://localhost:8089/
 
