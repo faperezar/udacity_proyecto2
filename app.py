@@ -6,10 +6,6 @@ import pandas as pd
 from sklearn.externals import joblib
 from sklearn.preprocessing import StandardScaler
 
-#Este arrojaba error en local"from sklearn.externals import joblib"
-#asi que lo reemplazo por import joblib
-
-#Todo esto es para el levantamiento de una web simple con Flask
 app = Flask(__name__)
 LOG = create_logger(app)
 LOG.setLevel(logging.INFO)
@@ -24,11 +20,10 @@ def scale(payload):
 
 @app.route("/")
 def home():
-    html = "<h3>Udacity - Sklearn Prediction Home - Pipeline v3</h3>"
+    html = "<h3>Sklearn Prediction Home</h3>"
     return html.format(format)
 
-#De aca en adelante es el servicio de prediccion
-
+# TO DO:  Log out the prediction value
 @app.route("/predict", methods=['POST'])
 def predict():
     """Performs an sklearn prediction
@@ -72,7 +67,3 @@ def predict():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
-
-#Ojo, esto lo deberia poder probar desde POSTMAN 
-#o ejecutando el make_prediction.sh para probar el publicado en el local
-#o el make_predict_azure_app.sh para probar el publicado en la webapp
