@@ -4,6 +4,8 @@
 
 This project is created in the context of the Udacity project and allows to have a practical execution of how an Integration flow and continuous deployment is carried out through GitHub and Azure Pipeline with a Python application and deployed to an Azure Web App.
 
+In this project it is very important given the dependencies of the application that Python 3.7 is used both in the Stack of the Web App and in the definition of the Pipeline.
+
 ## Project Plan
 * A link to a Trello board for the project
 https://trello.com/b/z3mKni0b/udacitycicd
@@ -102,11 +104,11 @@ https://github.com/faperezar/udacity_proyecto2/blob/d5d6f9602583e73dad3160ecc2b3
 
 5) To directly test the model of the raised application, we can occupy the following file, which finally makes a POST to the raised service in the web app. However, we can also test it with any assistant such as POSTMAN.
 
-```bash
-./make_predict_azure_app.sh
-Port: 443
-{"prediction":[20.35373177134412]}
-```
+    ```
+    bash make_predict_azure_app.sh
+    ```
+
+    ![Predict](https://github.com/faperezar/udacity_proyecto2/blob/67384b192a8e4cdbada6944042d4f87227de00e5/files/AZ_Predict.png)
 
 6) We can also run a simple performance test with the locust python library. In this case we run 10 concurrent users on the application and on the predict method.
 
