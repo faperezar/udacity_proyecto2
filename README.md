@@ -146,7 +146,7 @@ https://github.com/faperezar/udacity_proyecto2/blob/d5d6f9602583e73dad3160ecc2b3
 * Incorporate automated integration and / or performance tests to the CI
 * Deploy the infrastructure with terraform
 
-## Demo Video
+## Demo Video Youtube
 
 Video Demo Youtube: <br>
 [![Demo](https://img.youtube.com/vi/pdLPVPG0JRA/0.jpg)](https://www.youtube.com/watch?v=pdLPVPG0JRA)
